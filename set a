@@ -1,0 +1,15 @@
+class Set {
+
+private:
+	int* set;
+	int size;
+public:
+	Set();
+	Set(int);
+	Set(const Set&);
+	Set Union(const Set&)const;
+	Set Intersection(const Set&)const;
+	bool isEqual(const Set& s)const;
+	void print()const;
+	~Set();
+};

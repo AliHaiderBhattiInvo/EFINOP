@@ -1,0 +1,50 @@
+#include <iostream>
+#include "set.h"
+using namespace std;
+
+int main() {
+
+	Set** SetObj;
+	int arrSize, justSize;
+	cout << "Enter how many sets you want to enter: ";
+	cin >> arrSize;
+	SetObj = new Set * [arrSize];
+
+	for (int i = 0; i < arrSize; i++)
+	{
+		cout << "Enter size for the " << i+1 << " set: ";
+		cin >> justSize;
+
+		SetObj[i] = new Set(justSize);
+	}
+	for (int i = 0; i < arrSize; i++)
+	{
+		cout << "The set is " << i + 1 << endl;
+		SetObj[i][0].print();
+	}
+	if (arrSize > 1)
+	{
+		bool equal=false;
+		cout << endl << "The selected two sets are the first and second one. " << endl;
+		Set set1(SetObj[0][0]), set2(SetObj[1][0]);
+		
+		cout << "The Union of the two sets are : " << endl;
+		SetObj[0][0].Union(SetObj[1][0]).print();
+		cout << "The Intersection of the two sets are : " << endl;
+		SetObj[0][0].Intersection(SetObj[1][0]).print();
+
+		if (set1.isEqual(set2))
+		{
+			cout << "Both the sets are equal." << endl;
+		}
+		else {
+			cout << "Both the sets are not equal." << endl;
+		}
+
+	}
+	else {
+		cout << "We don't have two atleast two sets so we can't take two sets according to the condition " << endl;
+	}
+	system("pause");
+	return 0;
+}

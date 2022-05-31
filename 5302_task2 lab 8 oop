@@ -1,0 +1,204 @@
+#include<iostream>
+#include<cstring>
+using namespace std;
+
+class MyString
+{
+private:
+	char* str; // Pointer to the char array that holds the string
+	int length; // Variable to store the length of the string (excluding NULL)
+
+public:
+	// Default constructor to initialize the string to empty string
+	MyString();
+	// Overloaded constructor
+	MyString(const char*);
+	// Copy constructor
+	MyString(const MyString&);
+	// Returns the length (# of characters excluding the null terminator) of the string
+	int getLength(); // Destructor
+	~MyString();
+
+	void operator++();
+	friend void operator>>(istream&, MyString&);
+	friend void operator<<(ostream&, MyString& );
+	void operator=(MyString&);
+	void operator[](int);
+	bool operator==(MyString&);
+};
+MyString::MyString()
+{
+//	str = new char[20];
+	str[0] = '\0';
+	length = 0;
+}
+MyString::MyString(const char* s)
+{
+	str = new char[20];
+	for (int i = 0; i < 20; i++)
+	{
+		str[i] = s[i];
+	}
+	length = 0;
+}
+MyString::MyString(const MyString& s)
+{
+	
+	str = new char[s.length];
+	
+//	str = s.str;
+	for (int i = 0; i < s.length; i++)
+	{
+		str[i] = s.str[i];
+	}
+	length = s.length;
+}
+MyString::~MyString()
+{
+	delete[]str;
+}
+int MyString::getLength()
+{
+	int count = 0;
+	/*for (int i = 0; i < 20; i++)
+	{
+		if (str[i] >= 66 && str[i] <= 90 || str[i] >= 97 && str[i] <= 122 || str[i] == 32)
+		{
+			count++;
+		}
+	}*/
+
+	for (int i = 0; str[i]!='\0' &&str[i]!='\n' ; i++)
+	{
+		count++;	
+	}
+	length = count;
+	return count;
+}
+void MyString::operator++()
+{
+	cout << endl;
+	for (int i = 0; i < length; i++)
+	{
+		str[i] -= 32;
+	}
+	cout<<endl;
+	for (int i = 0; i < length; i++)
+	{
+		cout<<str[i];
+	}
+	for (int i = 0; i < length; i++)
+	{
+		str[i] += 32;
+	}
+	cout<<endl;
+	
+}
+void operator<<(ostream& o, MyString& s)
+{
+	for(int i=0;i<s.length;i++)
+		o << s.str[i];
+	cout << endl;
+}
+void operator>>(istream& inp, MyString& s)
+{
+	/*for(int i=0;i<s.length;i++)
+	{
+		cin>>s.str[i];
+	}*/
+	inp.getline(s.str, s.length);
+	cout << endl;
+}
+void MyString::operator=(MyString& s)
+{
+	for (int i = 0; i < length; i++)
+	{
+		str[i] = s.str[i];
+	}
+}
+void MyString::operator[](int index)
+{
+	bool flag = false;
+	char inp;
+	cout<<"Modify character ";
+	cin>>inp;
+	cout << "The Character at the Entered index is ";
+	for (int i = 0; i < length; i++)
+	{
+		if (i == index)
+		{
+			flag = true;
+			cout << str[i];
+			cout<<endl;
+			
+			str[i]=inp;
+		}
+
+	}
+	if (!flag)
+	{
+		cout << "Invalid Index Entered\n";
+	}
+}
+bool MyString::operator==(MyString& s)
+{
+	bool flag = false;
+	if (length = s.length) 
+	{
+		for (int i = 0; i < s.length; i++)
+		{
+			if (str[i] == s.str[i])
+			{
+				flag = true;
+			}
+			else
+			{
+				flag = false;
+			}
+		}
+	}
+	else
+	{
+		return false;
+	}
+	if (flag)
+	{
+		return true;
+	}
+	return false;
+}
+int main()
+{
+	char* str = new char[20];
+	cout << "Enter a String: ";
+	cin.getline(str, 20);
+	MyString s1(str);
+	cout<<endl;
+	int sizeOfstr=0;
+	sizeOfstr = s1.getLength();
+	++s1;
+	MyString s2(s1);
+	cout << "Enter Another String: ";
+	s2.getLength();
+	cin >> s2;
+
+
+	int index = 0;
+	cout << "Enter the index you want to access in the Main String: ";
+	cin >> index;
+	s1[index];
+	cout<<"after modification: ";
+	cout<<s1;
+	cout<<endl;
+	if (s1 == s2)
+	{
+		cout << "\nThe Two strings are Equal\n";
+	}
+	else
+	{
+		cout << "The Two Strings are not Equal\n";
+	}
+
+	system("pause>0");
+	return 0;
+}

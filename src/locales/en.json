@@ -1,0 +1,93 @@
+{
+  "sidebar": {
+    "home": "HOME",
+    "settings": "SETTINGS",
+    "coa": "CHART OF ACCOUNTS",
+    "upload": "UPLOAD COA",
+    "review": "REVIEW COA",
+    "focus": "MAP FOCUS PART IIA",
+    "ssoi": "MAP SSOI",
+    "trial_balance": "TRIAL BALANCE IMPORT",
+    "balance_sheet":"BALANCE SHEET",
+    "inventory": "INVENTORY",
+    "reports": "REPORTS",
+    "exports": "EXPORTS",
+    "final": "Final COA"
+  },
+  "nav": {
+    "allNotifications": "All Notifications",
+    "allMessages": "All Messages",
+    "allCarts": "All Carts",
+    "viewCarts": "View Carts",
+    "user": {
+      "available": "Available",
+      "profileTitle": "My Profile",
+      "profileSub": "View personal profile details.",
+      "profileEditTitle": "Edit Profile",
+      "profileEditSub": "Modify your personal details.",
+      "accountSettingTitle": "Account Setting",
+      "accountSettingSub": "Manage your account parameters.",
+      "privacySettingTitle": "Privacy Setting",
+      "privacySettingSub": "Control your privacy parameters.",
+      "signout": "Sign Out"
+    }
+  },
+  "dashboard2": {
+    "card1": "AVG Impressions",
+    "card2": "AVG Engagements Rate",
+    "card3": "AVG Reach",
+    "card4": "AVG Transport",
+    "featureTableTitle": "Frequent Post List",
+    "summary": "Post Summary",
+    "totalLikeComment": "Total of Likes $ Comments",
+    "bestPost": "Best Performing Posts"
+  },
+  "dashboard1": {
+    "card1": "Invoice Sent",
+    "card2": "Credited From Accounts",
+    "card3": "AVG Employee Costs",
+    "card4": "Average payment delay",
+    "invoice" : "invoice",
+    "invoiceState": "Invoice Stats",
+    "openInvoice": "Open Invoices",
+    "monthlyInvoice": "Monthly Invoices",
+    "exchangeRates": "Exchange Rates",
+    "paymentHistory" : "Payment History",
+    "lastCosts" : "Last Costs",
+    "efficiency" : "Efficiency"
+  },
+  "rightSide": {
+    "customerDistribution" : "Customer Distribution",
+    "projectStatistic" : "Project Statistic",
+    "countries" : "Countries"
+  },
+  "dropdown": {
+    "view" : "View",
+    "delete": "Delete",
+    "edit" : "Edit",
+    "print" : "Print",
+    "download": "Download",
+    "unfollow" : "Unfollow",
+    "follow" : "Follow",
+    "block" : "Block"
+  },
+  "customizer": {
+    "colorCustomizer": "Theme Customizer",
+    "themeColor": "Theme Color",
+    "colorMode": "Color Mode",
+    "sidebar": "Sidebar",
+    "sidebarMini": "Sidebar Mini",
+    "routeAnimation" : "Route Animation",
+    "rtlMode": "RTL Mode",
+    "rtl": "RTL",
+    "reset": "Reset"
+  },
+  "dashboard3": {
+    "productManagement": "Product Management",
+    "activity": "Activity",
+    "ticket": "Ticket",
+    "productEarnings": "Product Earnings",
+    "productDetails": "Product Details",
+    "market": "Market"
+  }
+}

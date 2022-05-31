@@ -1,0 +1,110 @@
+#include<iostream>
+using namespace std;
+void addcolumns(int **r,int size,int &y)
+{
+	for(int i=0;i<size;i++)
+	{
+		r[i]=new int [i+1];
+		y++;
+	}
+
+}
+void rowwiseinput (int**t,int size,int z)
+{
+	cout<<"Enter elements : "<<endl;
+	
+	for(int i=0;i<size;i++)
+	{
+		for(int j=0;j<i+1;j++)
+		{
+			cin>>t[i][j];
+		}
+		cout<<endl;
+	}
+}
+void rowwiseinputprint (int**u,int size,int z)
+{
+	
+	
+	for(int i=0;i<size;i++)
+	{
+		for(int j=0;j<i+1;j++)
+		{
+			cout<<u[i][j]<<" ";
+		}
+		cout<<endl;
+	}
+}
+
+int main()
+{
+	int**p;
+	int rows=0;
+	cout<<"Enter your rows : ";
+	cin>>rows;
+	p=new int *[rows];
+	int count=0;
+	addcolumns(p,rows,count);
+	cout<<endl;
+	rowwiseinput(p,rows,count);
+	cout<<endl;
+	rowwiseinputprint(p,rows,count);
+	system("pause");
+	return 0;
+
+}
+#include<iostream>
+#include<cstring>
+using namespace std;
+int main()
+{
+	int size=0;
+	
+	int count=0;
+	int ans=0;
+	char *p;
+	p=new char [30];
+
+	//cin.ignore();
+	cin.getline(p,30);
+	int c=0;
+	int s=0;
+
+
+	for(int i=0;p[i]!='\0';i++)
+	{
+		if (p[i] == 32)
+			s++;
+		else
+			c++;
+	}
+	ans=c+s;
+	cout<<endl<<"The number of words are : "<<c<<endl;
+    cout<<endl<<"The number of spaces are : "<<s<<endl;
+	
+	for(int i=0;i<=(c/2);i++)
+	{
+		c=c-1;
+		if(p[i]==p[c])
+		{
+			
+			
+		count++;
+	
+		}
+	}
+	if(count==ans/2)
+			
+//	cout<<count;
+	cout<<"The letter is pelindrom : "<<endl;
+	 else
+		 cout<<"The letter is not pelindrom : "<<endl<<endl;
+
+
+	
+
+  
+	system("pause");
+	return 0;
+
+}

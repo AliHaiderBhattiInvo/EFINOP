@@ -1,0 +1,132 @@
+#include <iostream>
+using namespace std;
+
+#define SIZE 25
+
+class Box {
+private:
+	int *length,*breath,*height;
+	const char *name;
+	static int objectcount;
+public:
+	void lenset(int);
+	void breaset(int);
+	void heiset(int);
+	void nameset(char []);
+	void lenget(int&)const;
+	void breaget(int&)const;
+	void heiget(int&)const;
+	void nameget(char [])const;
+	static int getCount();
+	double Volume();
+	double Area();
+	void print ();
+	void operator=(const Box&);
+	Box();
+	Box(const Box&);
+	Box(int ,int ,int, char []);
+};
+int Box :: objectcount=0;
+Box :: Box(){
+	length = new int ;
+	breath = new int ;
+	height = new int ;
+	name = NULL;
+	*length = *breath = *height = 0;
+	objectcount++;
+}
+Box :: Box(int cleng,int cbrea,int chei, char cname[]){
+	length = new int ;
+	breath = new int ;
+	height = new int ;
+	*length = cleng;
+	*breath = cbrea;
+	*height = chei;
+	name = cname;
+	objectcount++;
+	
+}
+Box :: Box(const Box & obj){
+	length = new int ;
+	breath = new int ;
+	height = new int ;
+	*length = *obj.length;
+	*breath = *obj.breath;
+	*height = *obj.height;
+	name = obj.name;
+	objectcount++;
+	
+}
+
+void Box :: lenset (int valve){
+	*length = valve;
+}
+void Box :: breaset (int valve){
+	*breath = valve;
+}
+void Box :: heiset (int valve){
+	*height = valve;
+}
+void Box :: nameset (char cname[]){
+	name = cname;
+}
+void Box :: lenget (int & valve)const{
+	valve = *length;
+}
+void Box :: breaget (int &valve)const{
+	valve = *breath;
+}
+void Box :: heiget (int& valve)const {
+	valve = *height;
+}
+void Box :: nameget(char cname[])const {
+	for (int i = 0; name[i]!='\0'&& name!=NULL; i++)
+	{
+		cname[i] = name[i];
+	}
+	if (name==NULL)
+	{
+		cname[0] = '\0';
+	}
+}
+int Box :: getCount(){
+	return objectcount;
+}
+double Box :: Volume(){
+	return static_cast<double>(*length)**breath**height;
+}
+double Box :: Area(){
+	return static_cast<double>(*length)**breath;
+}
+void Box :: operator=(const Box& obj){
+	*length = *obj.length ;
+	*breath = *obj.breath;
+	*height = *obj.height;
+	name = obj.name;
+}
+void Box :: print(){
+	cout <<endl;
+	cout << "Name: " << name<<endl
+		 << "Length: " << *length <<endl
+		 << "Breath: " << *breath <<endl
+		 << "Height: " << *height <<endl;
+}
+int main (){
+
+	Box b1(2,3,4,"Box1");
+	Box b2(b1);
+	Box b3;
+
+	b3= b1;
+
+	cout << "Box Count is : "<<Box :: getCount()<<endl;
+
+	cout << "Box1 Area: "<< b1.Area()<<endl;
+	cout << "Box1 Volume: "<< b1.Volume()<<endl;
+	cout << "All data of Box1: "<<endl;
+
+	b1.print();
+
+	system("pause");
+	return 0;
+}

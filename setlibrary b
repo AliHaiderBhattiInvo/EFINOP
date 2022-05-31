@@ -1,0 +1,150 @@
+#include <iostream>
+#include "set.h"
+using namespace std;
+
+Set::Set() {
+
+	size = 0;
+	set = NULL;
+}
+Set::Set(int size1) {
+
+	for (; !(size1 >= 0 && size1 <= 100); )
+	{
+		cout << "Enter the size again: ";
+		cin >> size1;
+	}
+	size = size1;
+	set = new int[size];
+	cout << "Enter vaues for the set: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << "Enter a value: ";
+		cin >> set[i];
+	}
+
+}
+Set::Set(const Set& obj) {
+	size = obj.size;
+
+	set = new int[size];
+	for (int i = 0; i < size; i++)
+	{
+		set[i] = obj.set[i];
+	}
+}
+Set Set::Union(const Set& s)const {
+
+
+	Set setUnion;
+	int count = 0;
+
+	bool* pass = new bool[s.size];
+	for (int i = 0; i < s.size; i++)
+	{
+		pass[i] = true;
+	}
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < s.size; j++)
+		{
+			if (set[i] == s.set[j])
+			{
+				count++;
+				pass[j] = false;
+				break;
+			}
+		}
+	}
+	setUnion.size = size + s.size - count;
+	setUnion.set = new int[setUnion.size];
+	int j = 0;
+	for (int i = 0; i < size; j++, i++)
+	{
+		setUnion.set[j] = set[i];
+	}
+	for (int i = 0; i < s.size;  i++)
+	{
+		if (pass[i])
+		{
+			setUnion.set[j] = s.set[i];
+			j++;
+		}
+	}
+
+	return setUnion;
+
+}
+Set Set::Intersection(const Set& s)const {
+
+
+	Set setInterc;
+	int count = 0;
+	bool* pass = new bool[size];
+	for (int i = 0; i < size; i++)
+	{
+		pass[i] = false;
+	}
+	for (int i = 0; i < s.size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			if (set[j] == s.set[i])
+			{
+				count++;
+				pass[j] = true;
+				break;
+			}
+		}
+	}
+	setInterc.size = count;
+	setInterc.set = new int[count];
+	int k = 0;
+
+	for (int j = 0; j < size; j++)
+	{
+		if (pass[j])
+		{
+			setInterc.set[k] = set[j];
+			k++;
+		}
+	}
+	return setInterc;
+}
+bool Set::isEqual(const Set& s)const {
+	int count = 0;
+	if (size == s.size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < s.size; j++)
+			{
+				if (s.set[j] == set[i])
+				{
+					count++;
+				}
+			}
+		}
+		if (count == size)
+		{
+			return true;
+		}
+		else
+			return false;
+	}
+	else
+		return false;
+}
+void Set::print()const {
+	
+	cout << "The value of Set are: " << endl;
+	for (int i = 0; i < size; i++)
+	{
+		cout << set[i] << " ";
+	}
+	cout << endl;
+}
+Set :: ~Set() {
+
+	delete[] set;
+}

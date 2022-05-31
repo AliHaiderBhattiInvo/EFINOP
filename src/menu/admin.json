@@ -1,0 +1,143 @@
+[
+    {
+      "title": "HOME",
+      "name": "sidebar.home",
+      "is_heading": false,
+      "is_active": false,
+      "link": {
+        "name": "app.home"
+      },
+      "class_name": "",
+      "is_icon_class": true,
+      "icon": "las la-home iq-arrow-left"
+    },
+    {
+      "title": "SETTINGS",
+      "name": "sidebar.settings",
+      "is_heading": false,
+      "is_active": false,
+      "link": "",
+      "class_name": "",
+      "is_icon_class": true,
+      "icon": "las la-cog iq-arrow-left",
+      "children": [
+        {
+          "title": "Users",
+          "name": "Users",
+          "is_active": false,
+          "link": {
+            "name" : "settings.users"
+          },
+          "class_name": "",
+          "is_icon_class": true,
+          "icon": "las la-id-card-alt"
+        }
+      ]
+    },
+    {
+      "title": "CHART OF ACCOUNTS",
+      "name": "sidebar.coa",
+      "is_heading": false,
+      "is_active": false,
+      "link": "",
+      "class_name": "",
+      "is_icon_class": true,
+      "icon": "las la-file iq-arrow-left",
+      "children": [
+        {
+          "title": "Review COA",
+          "name": "sidebar.review",
+          "is_active": false,
+          "link": {
+            "name" : "coa.review"
+          },
+          "class_name": "",
+          "is_icon_class": true,
+          "icon": "las la-id-card-alt"
+        },
+        {
+          "title": "Upload COA",
+          "name": "sidebar.upload",
+          "is_active": false,
+          "link": {
+            "name" : "coa.upload"
+          },
+          "class_name": "",
+          "is_icon_class": true,
+          "icon": "las la-id-card-alt"
+        },
+        {
+          "title": "Final COA",
+          "name": "sidebar.final",
+          "is_active": false,
+          "link": {
+            "name" : "coa.final"
+          },
+          "class_name": "",
+          "is_icon_class": true,
+          "icon": "las la-id-card-alt"
+        }
+      ]
+    },
+    {
+      "title": "TRIAL BALANCE IMPORT",
+      "name": "sidebar.trial_balance",
+      "is_heading": false,
+      "is_active": false,
+      "link": {
+        "name": "app.trialBalance"
+      },
+      "class_name": "",
+      "is_icon_class": true,
+      "icon": "las la-file iq-arrow-left"
+    },
+    {
+      "title": "Balance Sheet",
+      "name": "sidebar.balance_sheet",
+      "is_heading": false,
+      "is_active": false,
+      "link": {
+        "name": "app.balanceSheet"
+      },
+      "class_name": "",
+      "is_icon_class": true,
+      "icon": "las la-file iq-arrow-left"
+    },
+    {
+      "title": "INVENTORY",
+      "name": "sidebar.inventory",
+      "is_heading": false,
+      "is_active": false,
+      "link": {
+        "name": "app.inventory"
+      },
+      "class_name": "",
+      "is_icon_class": true,
+      "icon": "las la-file iq-arrow-left"
+    },
+    {
+      "title": "REPORTS",
+      "name": "sidebar.reports",
+      "is_heading": false,
+      "is_active": false,
+      "link": {
+        "name": "app.reports"
+      },
+      "class_name": "",
+      "is_icon_class": true,
+      "icon": "las la-file-invoice iq-arrow-left"
+    },
+    {
+      "title": "EXPORTS",
+      "name": "sidebar.exports",
+      "is_heading": false,
+      "is_active": false,
+      "link": {
+        "name": "app.export"
+      },
+      "class_name": "",
+      "is_icon_class": true,
+      "icon": "las la-share iq-arrow-left"
+    }
+  ]
+  
