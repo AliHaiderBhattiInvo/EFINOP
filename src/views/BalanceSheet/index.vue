@@ -176,8 +176,10 @@ export default {
   data() {
     return {
       activeButton: "income",
+       expanded_rows: {},
       items: [
-        {
+        { id: 'abcd',
+        _showDetails: undefined,
           ACCOUNT_NAME: "Total income",
           ACC_NO: "",
           TYPE: "",
@@ -273,10 +275,11 @@ export default {
     onRowClicked(item) {
       console.log("method called", item);
       // item.detailsShowing = !item.detailsShowing
-      // const { expanded_rows } = this;
-      // const { uuid } = item;
+      const { expanded_rows } = this;
+      const { id } = item;
+      item._showDetails = !item._showDetails
 
-      // this.$set(expanded_rows, uuid, !expanded_rows[uuid]);
+      this.$set(expanded_rows, id, !expanded_rows[id]);
     },
   },
 };
