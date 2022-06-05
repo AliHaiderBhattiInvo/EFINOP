@@ -155,15 +155,51 @@
         :items="items"
         :fields="fields"
         striped
-        responsive="sm"
         class="mt-2 mx-2"
+        details-td-class="px-0"
         @row-clicked="onRowClicked"
       >
         <template v-slot:cell(ACCOUNT_NAME)="data">
-          {{ data.item.ACCOUNT_NAME }}
+          <div
+            style="width:200px !important; padding: 0px !important; margin: 0px !important"
+            class="mx-0 px-0"
+          >
+            {{ data.item.ACCOUNT_NAME }}
+          </div>
         </template>
-        <template #row-details="{ item }">
-          <div>{{ item }}</div>
+        <template v-slot:cell(ACC_NO)="data">
+          {{ data.item.ACC_NO }}
+        </template>
+        <template v-slot:cell(TYPE)="data">
+          {{ data.item.TYPE }}
+        </template>
+        <template v-slot:cell(FOCUS_ID)="data">
+          {{ data.item.FOCUS_ID }}
+        </template>
+        <template
+          #row-details="{ item }"
+          class="px-0"
+          
+        >
+        <div style="width:100%; padding: 0px !important; margin: 0px !important">
+          <b-table
+            :items="item.array"
+            :fields="fields"
+            striped
+            class="px-0 py-0 mx-0 my-0"
+            thead-class="d-none"
+            tbody-tr-class="px-0"
+            ><template v-slot:cell(ACCOUNT_NAME)="data" style="width:200px !important; padding: 0px !important; margin: 0px !important"
+                class="mx-0 px-0">
+              <div
+                style="width:200px !important; padding: 0px !important; margin: 0px !important"
+                class="mx-0 px-0"
+              >
+                {{ data.item.ACCOUNT_NAME }}
+              </div>
+            </template>
+          </b-table>
+          </div>
         </template>
       </b-table>
     </div>
@@ -176,10 +212,85 @@ export default {
   data() {
     return {
       activeButton: "income",
-       expanded_rows: {},
+      expanded_rows: {},
       items: [
-        { id: 'abcd',
-        _showDetails: undefined,
+        {
+          id: "abcd",
+          _showDetails: undefined,
+          ACCOUNT_NAME: "Total income",
+          ACC_NO: "123",
+          TYPE: "CUR",
+          FOCUS_ID: "12",
+          SSOI_ID: "12",
+          ALLOWABLE_NA: "N/A",
+          JAN_2022: "223,572",
+          FEB_2022: "234,567",
+          MAR_2022: "981,234",
+          APR_2022: "871,236",
+          MAY_2022: "626,262",
+          JUN_2022: "666,789",
+          array: [
+            {
+              ACCOUNT_NAME: "Interest Income",
+              ACC_NO: "123",
+              TYPE: "SAV",
+              FOCUS_ID: "21",
+              SSOI_ID: "21",
+              ALLOWABLE_NA: "N/A",
+              JAN_2022: "223,572",
+              FEB_2022: "234,567",
+              MAR_2022: "981,234",
+              APR_2022: "871,236",
+              MAY_2022: "626,262",
+              JUN_2022: "666,789",
+            },
+            {
+              ACCOUNT_NAME: "Equity Commissions",
+              ACC_NO: "",
+              TYPE: "",
+              FOCUS_ID: "",
+              SSOI_ID: "",
+              ALLOWABLE_NA: "",
+              JAN_2022: "223,572",
+              FEB_2022: "234,567",
+              MAR_2022: "981,234",
+              APR_2022: "871,236",
+              MAY_2022: "626,262",
+              JUN_2022: "666,789",
+            },
+            {
+              ACCOUNT_NAME: "Mutual Funds",
+              ACC_NO: "",
+              TYPE: "",
+              FOCUS_ID: "",
+              SSOI_ID: "",
+              ALLOWABLE_NA: "",
+              JAN_2022: "223,572",
+              FEB_2022: "234,567",
+              MAR_2022: "981,234",
+              APR_2022: "871,236",
+              MAY_2022: "626,262",
+              JUN_2022: "666,789",
+            },
+            {
+              ACCOUNT_NAME: "Principle Trade",
+              ACC_NO: "",
+              TYPE: "",
+              FOCUS_ID: "",
+              SSOI_ID: "",
+              ALLOWABLE_NA: "",
+              JAN_2022: "223,572",
+              FEB_2022: "234,567",
+              MAR_2022: "981,234",
+              APR_2022: "871,236",
+              MAY_2022: "626,262",
+              JUN_2022: "666,789",
+            },
+          ],
+        },
+        {
+          id: "efgh",
+          _showDetails: undefined,
           ACCOUNT_NAME: "Total income",
           ACC_NO: "",
           TYPE: "",
@@ -277,7 +388,7 @@ export default {
       // item.detailsShowing = !item.detailsShowing
       const { expanded_rows } = this;
       const { id } = item;
-      item._showDetails = !item._showDetails
+      item._showDetails = !item._showDetails;
 
       this.$set(expanded_rows, id, !expanded_rows[id]);
     },
@@ -301,7 +412,13 @@ export default {
   background-color: #1e3d73 !important;
   color: white !important;
 }
-.header-width {
-  width: 25%;
+/* .header-width {
+  width: 340px !important;
+} */
+.hidden-header {
+  visibility: hidden !important;
+}
+.slot-width {
+  max-width: 340px !important;
 }
 </style>
