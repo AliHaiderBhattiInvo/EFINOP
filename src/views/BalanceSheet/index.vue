@@ -33,22 +33,22 @@
               <div>2,263,840.2</div>
               <div class="flex-start sub-class">ASSETS</div>
             </div>
-            <div class="slash-color">|</div>
+            <div class="slash-color"></div>
             <div>
               <div>163,788</div>
               <div class="flex-start sub-class">ASSETS</div>
             </div>
-            <div class="slash-color">|</div>
+            <div class="slash-color"></div>
             <div>
               <div>163,788</div>
               <div class="flex-start sub-class">ASSETS</div>
             </div>
-            <div class="slash-color">|</div>
+            <div class="slash-color"></div>
             <div>
               <div>163,788</div>
               <div class="flex-start sub-class">ASSETS</div>
             </div>
-            <div class="slash-color">|</div>
+            <div class="slash-color"></div>
             <div>
               <div>163,788</div>
               <div class="flex-start sub-class">ASSETS</div>
@@ -58,7 +58,7 @@
       </b-card>
       <b-card class="ml-1 px-3 text-center request-card card-common">
         <b-card-text>
-          <b-row class="d-flex flex-wrap justify-content-between">
+          <b-row class="d-flex flex-wrap justify-content-between py-1">
             <div class="d-flex">
               <div>
                 <img
@@ -68,9 +68,9 @@
               </div>
               <div class="ml-2">REVIEW REQUEST</div>
             </div>
-            <div class="mt-n1 blue-color"> +View All </div>
+            <div class="mt-n1 blue-color pointer"> +View All </div>
           </b-row>
-          <b-row class="mt-1 d-flex flex-wrap justify-content-between">
+          <b-row class="mt-1 d-flex flex-wrap justify-content-between py-2">
             <div class="d-flex">
               <b-avatar size="2rem"></b-avatar>
               <div class="ml-1 black">
@@ -93,9 +93,13 @@
               </div>
               <div class="ml-1">2</div>
             </div>
-            <div class="d-flex mt-n1">
-              <b-button variant="light" class="mr-1 red">Decline</b-button>
-              <b-button variant="light" class="blue">Accept</b-button>
+            <div class="d-flex mt-1">
+              <div class="mr-1 red font-12 pointer">Decline</div>
+              <div class="blue-color acc-dec px-1">|</div>
+              <div class="blue-color ml-1 font-12 pointer">Approve</div>
+              <!-- <b-button variant="light" class="mr-1 red">Decline</b-button>
+              
+              <b-button variant="light" class="blue">Accept</b-button> -->
             </div>
           </b-row>
         </b-card-text>
@@ -548,7 +552,8 @@ export default {
   font-weight: 700 !important;
 }
 .slash-color {
-  color: #e6e6e6 !important;
+ margin-top:15px; border-left: 1px solid; color: #E6E6E6;
+  height: 22px;
 }
 .sub-class {
   font-size: 10px;
@@ -593,5 +598,11 @@ export default {
 }
 .mtop-2 {
   margin-top: 2px !important;
+}
+.acc-dec {
+  font-weight:20px !important; margin-top:-2px !important
+}
+.pointer {
+  cursor: pointer;
 }
 </style>
