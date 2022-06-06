@@ -1,7 +1,7 @@
 <template>
   <b-container fluid>
     <div class="d-flex flex-wrap w-100">
-      <b-card class="stat-card card-common">
+      <b-card class="stat-card card-common border-10">
         <b-card-text>
           <b-row class="d-flex flex-wrap justify-content-between pl-3 pr-2">
             <div class="d-flex">
@@ -56,7 +56,7 @@
           </b-row>
         </b-card-text>
       </b-card>
-      <b-card class="ml-1 px-3 text-center request-card card-common">
+      <b-card class="ml-2 px-3 text-center request-card card-common border-10">
         <b-card-text>
           <b-row class="d-flex flex-wrap justify-content-between py-1">
             <div class="d-flex">
@@ -105,9 +105,9 @@
         </b-card-text>
       </b-card>
     </div>
-    <div class="mt-1 w-100 table-outline">
-      <div class="d-flex px-2 flex-wrap justify-content-between w-100">
-        <div class="d-flex flex-wrap mx-2 mt-1">
+    <div class="mt-3 w-100 table-outline border-10">
+      <div class="d-flex px-2 mt-3 flex-wrap justify-content-between w-100">
+        <div class="d-flex flex-wrap mx-2">
           <b-button
             @click="changeState('income')"
             variant="light"
@@ -115,7 +115,7 @@
             :class="activeButton == 'income' ? 'active-btn' : ''"
             >INCOME</b-button
           >
-          <div class="mt-1 mx-2">|</div>
+          <div class="header-slash mx-2"></div>
           <b-button
             @click="changeState('trial_balance')"
             variant="light"
@@ -123,7 +123,7 @@
             :class="activeButton == 'trial_balance' ? 'active-btn' : ''"
             >TRIAL BALANCE</b-button
           >
-          <div class="mt-1 mx-2">|</div>
+           <div class="header-slash mx-2"></div>
           <b-button
             @click="changeState('allowable')"
             variant="light"
@@ -131,7 +131,7 @@
             :class="activeButton == 'allowable' ? 'active-btn' : ''"
             >ALLOWABLE</b-button
           >
-          <div class="mt-1 mx-2">|</div>
+           <div class="header-slash mx-2"></div>
           <b-button
             @click="changeState('non_allowable')"
             variant="light"
@@ -140,39 +140,28 @@
             >NON-ALLOWABLE</b-button
           >
         </div>
-        <div class="d-flex mt-2">
+        <div class="d-flex">
           <b-form-select
             v-model="selected"
             :options="options2"
             size="sm"
             class="w-100px border-none"
           ></b-form-select>
-          <!-- <b-dropdown variant="light" class="drop-down" text="Quarter">
-            <b-dropdown-item href="#">Action</b-dropdown-item>
-            <b-dropdown-item href="#">Another action</b-dropdown-item>
-            <b-dropdown-item href="#">Something else here</b-dropdown-item>
-          </b-dropdown> -->
           <b-form-select
             v-model="selected"
             :options="options"
             size="sm"
             class="ml-1 w-100px border-none"
           ></b-form-select>
-          <!-- <b-dropdown variant="light" class="drop-down ml-1" text="Q2-2022">
-            <b-dropdown-item href="#">Action</b-dropdown-item>
-            <b-dropdown-item href="#">Another action</b-dropdown-item>
-            <b-dropdown-item href="#">Something else here</b-dropdown-item>
-          </b-dropdown> -->
         </div>
       </div>
       <b-table
         :items="items"
         :fields="fields"
         fixed="fixed"
-        class="mt-2 px-2 table-height"
+        class="mt-3 px-2 table-height"
         details-td-class="px-0"
         tbody-tr-class="table-slots"
-        sticky-header
         @row-clicked="onRowClicked"
       >
         <template v-slot:cell(ACCOUNT_NAME)="data">
@@ -510,7 +499,7 @@ export default {
   width: 730px !important;
 }
 .request-card {
-  width: 618px !important;
+  width: 613px !important;
 }
 .drop-down :hover {
   background-color: white;
@@ -555,6 +544,11 @@ export default {
  margin-top:15px; border-left: 1px solid; color: #E6E6E6;
   height: 22px;
 }
+.header-slash {
+  color: #777D74;
+  margin-top:12px; border-left: 1px solid;
+  height: 12px;
+}
 .sub-class {
   font-size: 10px;
   margin-top: -7px !important;
@@ -573,9 +567,10 @@ export default {
   color: #1e3d73 !important;
 }
 .table-outline {
-  height: 72vh !important ;
+  height: 680px !important ;
   border-style: solid;
   border-color: #e9e9e9;
+  overflow-y: auto;
 }
 .table-slots {
   color: #1e3d73 !important;
@@ -604,5 +599,8 @@ export default {
 }
 .pointer {
   cursor: pointer;
+}
+.border-10 {
+  border-radius: 10px !important;
 }
 </style>
