@@ -68,7 +68,7 @@
               </div>
               <div class="ml-2">REVIEW REQUEST</div>
             </div>
-            <b-button class="blue-color" variant="light">+View All</b-button>
+            <div class="mt-n1 blue-color"> +View All </div>
           </b-row>
           <b-row class="mt-1 d-flex flex-wrap justify-content-between">
             <div class="d-flex">
@@ -77,7 +77,7 @@
                 Wade Warren
               </div>
             </div>
-            <div class="font-12">May 21, 2020 | 09:00 am</div>
+            <div class="font-12 mtop-2">May 21, 2020 | 09:00 am</div>
             <div class="d-flex blue-color">
               <div>
                 <img
@@ -93,8 +93,8 @@
               </div>
               <div class="ml-1">2</div>
             </div>
-            <div class="d-flex">
-              <b-button variant="light" class="ml-1 red">Decline</b-button>
+            <div class="d-flex mt-n1">
+              <b-button variant="light" class="mr-1 red">Decline</b-button>
               <b-button variant="light" class="blue">Accept</b-button>
             </div>
           </b-row>
