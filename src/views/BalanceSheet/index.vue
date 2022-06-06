@@ -3,7 +3,7 @@
     <div class="d-flex flex-wrap w-100">
       <b-card class="stat-card card-common">
         <b-card-text>
-          <b-row class="d-flex flex-wrap justify-content-between pl-3">
+          <b-row class="d-flex flex-wrap justify-content-between pl-3 pr-2">
             <div class="d-flex">
               <div>
                 <img
@@ -56,7 +56,7 @@
           </b-row>
         </b-card-text>
       </b-card>
-      <b-card class="ml-1 text-center request-card card-common">
+      <b-card class="ml-1 px-3 text-center request-card card-common">
         <b-card-text>
           <b-row class="d-flex flex-wrap justify-content-between">
             <div class="d-flex">
@@ -77,7 +77,7 @@
                 Wade Warren
               </div>
             </div>
-            <div>May 21, 2020 | 09:00 am</div>
+            <div class="font-12">May 21, 2020 | 09:00 am</div>
             <div class="d-flex blue-color">
               <div>
                 <img
@@ -85,7 +85,7 @@
                   class="svg-icon"
                 />
               </div>
-              <div class="ml-1">View COA</div>
+              <div class="ml-1 mtop-2 font-12">View COA</div>
             </div>
             <div class="d-flex blue-color">
               <div>
@@ -102,7 +102,7 @@
       </b-card>
     </div>
     <div class="mt-1 w-100 table-outline">
-      <div class="d-flex flex-wrap justify-content-between w-100">
+      <div class="d-flex px-2 flex-wrap justify-content-between w-100">
         <div class="d-flex flex-wrap mx-2 mt-1">
           <b-button
             @click="changeState('income')"
@@ -587,5 +587,11 @@ export default {
 .b-table-sticky-header {
   max-height: 645px !important;
   overflow: auto !important;
+}
+.font-12 {
+  font-size: 12px !important;
+}
+.mtop-2 {
+  margin-top: 2px !important;
 }
 </style>
